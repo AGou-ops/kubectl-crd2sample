@@ -3,11 +3,10 @@ kind: Plugin
 metadata:
   name: crd2sample
 spec:
-  version: "{{ .TagName }}"
+  version: v0.0.1
   homepage: https://github.com/AGou-ops/kubectl-crd2sample
-  shortDescription: >-
-    Get the sample configuration of the specified crd.
-  description: |+2
+  shortDescription: "Get the sample configuration of the specified crd."
+  description: |
     Get the sample configuration of the specified crd.
 
     $ kubectl crd2sample tenants.capsule.clastix.io
@@ -15,73 +14,71 @@ spec:
 
     For usage or examples, run:
 
-    $ kubectl crd2sample -h
-  caveats: |
-    The plugin requires kubeconfig to access k8s cluster.
+    $ kubectl crd2sam
   platforms:
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: amd64
-      {{addURIAndSha "https://github.com/AGou-ops/kubectl-crd2sample/releases/download/{{ .TagName }}/kubectl-crd2sample_darwin_amd64.tar.gz" .TagName | indent 6}}
-      files:
-        - from: kubectl-crd2sample
-          to: .
-        - from: LICENSE
-          to: .
-      bin: kubectl-crd2sample
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: arm64
-      {{addURIAndSha "https://github.com/AGou-ops/kubectl-crd2sample/releases/download/{{ .TagName }}/kubectl-crd2sample_darwin_arm64.tar.gz" .TagName | indent 6}}
-      files:
-        - from: kubectl-crd2sample
-          to: .
-        - from: LICENSE
-          to: .
-      bin: kubectl-crd2sample
-    - selector:
-        matchLabels:
-          os: linux
-          arch: amd64
-      {{addURIAndSha "https://github.com/AGou-ops/kubectl-crd2sample/releases/download/{{ .TagName }}/kubectl-crd2sample_linux_amd64.tar.gz" .TagName | indent 6}}
-      files:
-        - from: kubectl-crd2sample
-          to: .
-        - from: LICENSE
-          to: .
-      bin: kubectl-crd2sample
-    - selector:
-        matchLabels:
-          os: linux
-          arch: arm64
-      {{addURIAndSha "https://github.com/AGou-ops/kubectl-crd2sample/releases/download/{{ .TagName }}/kubectl-crd2sample_linux_arm64.tar.gz" .TagName | indent 6}}
-      files:
-        - from: kubectl-crd2sample
-          to: .
-        - from: LICENSE
-          to: .
-      bin: kubectl-crd2sample
-    - selector:
-        matchLabels:
-          os: windows
-          arch: amd64
-      {{addURIAndSha "https://github.com/AGou-ops/kubectl-crd2sample/releases/download/{{ .TagName }}/kubectl-crd2sample_windows_amd64.zip" .TagName | indent 6}}
-      files:
-        - from: kubectl-crd2sample.exe
-          to: .
-        - from: LICENSE
-          to: .
-      bin: kubectl-crd2sample.exe
-    - selector:
-        matchLabels:
-          os: windows
-          arch: arm64
-      {{addURIAndSha "https://github.com/AGou-ops/kubectl-crd2sample/releases/download/{{ .TagName }}/kubectl-crd2sample_windows_arm64.zip" .TagName | indent 6}}
-      files:
-        - from: kubectl-crd2sample.exe
-          to: .
-        - from: LICENSE
-          to: .
-      bin: kubectl-crd2sample.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/AGou-ops/kubectl-crd2sample/releases/download/v0.0.1/kubectl-crd2sample_windows_amd64.zip
+    files:
+      - from: kubectl-crd2sample.exe
+        to: .
+      - from: LICENSE
+        to: .
+    bin: kubectl-crd2sample.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/AGou-ops/kubectl-crd2sample/releases/download/v0.0.1/kubectl-crd2sample_windows_arm64.zip
+    files:
+      - from: kubectl-crd2sample.exe
+        to: .
+      - from: LICENSE
+        to: .
+    bin: kubectl-crd2sample.exe
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/AGou-ops/kubectl-crd2sample/releases/download/v0.0.1/kubectl-crd2sample_linux_amd64.tar.gz
+    files:
+      - from: kubectl-crd2sample
+        to: .
+      - from: LICENSE
+        to: .
+    bin: kubectl-crd2sample
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/AGou-ops/kubectl-crd2sample/releases/download/v0.0.1/kubectl-crd2sample_linux_arm64.tar.gz
+    files:
+      - from: kubectl-crd2sample
+        to: .
+      - from: LICENSE
+        to: .
+    bin: kubectl-crd2sample
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/AGou-ops/kubectl-crd2sample/releases/download/v0.0.1/kubectl-crd2sample_darwin_amd64.tar.gz
+    files:
+      - from: kubectl-crd2sample
+        to: .
+      - from: LICENSE
+        to: .
+    bin: kubectl-crd2sample
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/AGou-ops/kubectl-crd2sample/releases/download/v0.0.1/kubectl-crd2sample_darwin_arm64.tar.gz
+    files:
+      - from: kubectl-crd2sample
+        to: .
+      - from: LICENSE
+        to: .
+    bin: kubectl-crd2sample
