@@ -25,7 +25,7 @@ archives:
       - goos: windows
         format: zip
 snapshot:
-  name_template: "{{ .Tag }}-next"
+  version_template: "{{ .Version }}-SNAPSHOT-{{.ShortCommit}}"
 release:
   include_meta: true
   github:
